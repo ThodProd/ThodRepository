@@ -7,67 +7,66 @@
 //
 
 import Cocoa
-var theZnak = "+"
-var theFirst = "0"
-var theSecond = "0"
-var theInvFirst = "0"
-var theOtvet = "0"
+var Znak = "+"
+var First:Double = 0
+var Second:Double = 0
+var InvFirst = ""
+var Otvet:Double = 0
 
 class ViewController: NSViewController {
     
+    @IBOutlet weak var Result: NSTextField!
     
     
-    @IBOutlet weak var theResult: NSTextField!
-    
-    //oneTwoTre
-    @IBAction func theZero(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "0"
-        theInvFirst = theInvFirst + "0"
+    //oneTwoTree
+    @IBAction func Zerro(_ sender: Any) {
+        Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "0"
+    }
+   
+    @IBAction func One(_ sender: Any) {
+         Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "1"
     }
     
-    @IBAction func theOne(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "1"
-        theInvFirst = theInvFirst + "1"
+    @IBAction func Two(_ sender: Any) {
+         Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "2"
     }
     
-    @IBAction func theTwo(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "2"
-        theInvFirst = theInvFirst + "2"
+    @IBAction func Tree(_ sender: Any) {
+        Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "3"
     }
     
-    @IBAction func theThree(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "3"
-        theInvFirst = theInvFirst + "3"
+    @IBAction func Four(_ sender: Any) {
+         Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "4"
     }
     
-    @IBAction func theFour(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "4"
-        theInvFirst = theInvFirst + "4"
+    @IBAction func Five(_ sender: Any) {
+         Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "5"
     }
     
-    @IBAction func theFive(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "5"
-        theInvFirst = theInvFirst + "5"
+    @IBAction func Six(_ sender: Any) {
+         Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "6"
     }
     
-    @IBAction func theSix(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "6"
-        theInvFirst = theInvFirst + "6"
+    @IBAction func Seven(_ sender: Any) {
+         Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "7"
     }
     
-    @IBAction func theSeven(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "7"
-        theInvFirst = theInvFirst + "7"
+    @IBAction func Eight(_ sender: Any) {
+         Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "8"
     }
     
-    @IBAction func theEight(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "8"
-        theInvFirst = theInvFirst + "8"
-    }
-    
-    @IBAction func theNine(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "9"
-        theInvFirst = theInvFirst + "9"
+    @IBAction func Nine(_ sender: Any) {
+         Result.stringValue += (sender as! NSButton).title
+        InvFirst = InvFirst + "9"
     }
     
     //end
@@ -75,44 +74,52 @@ class ViewController: NSViewController {
     
     //Symbol
     
-    @IBAction func theDegree(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "/"
-        theZnak = "/"
-        theFirst = theResult.stringValue
-        theInvFirst = ""
+    @IBAction func Division(_ sender: Any) {
+        Result.stringValue += (sender as! NSButton).title
+        Znak = "/"
+        First = Double(Int(NSString(string: Result.stringValue).intValue))
+        InvFirst = "0"
     }
     
-    @IBAction func theMulti(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "*"
-        theZnak = "*"
-        theFirst = theResult.stringValue
-        theInvFirst = ""
+    @IBAction func Multi(_ sender: Any) {
+        Result.stringValue += (sender as! NSButton).title
+        Znak = "*"
+        First = Double(Int(NSString(string: Result.stringValue).intValue))
+        InvFirst = "0"
     }
     
-    @IBAction func theMinus(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "-"
-        theZnak = "-"
-        theFirst = theResult.stringValue
-        theInvFirst = ""
+    @IBAction func Minus(_ sender: Any) {
+        Result.stringValue += (sender as! NSButton).title
+        Znak = "-"
+        First = Double(Int(NSString(string: Result.stringValue).intValue))
+        InvFirst = "0"
     }
     
-    @IBAction func thePlus(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "+"
-        theZnak = "+"
-        theFirst = theResult.stringValue
-        theInvFirst = ""
+    @IBAction func Plus(_ sender: Any) {
+        Result.stringValue += (sender as! NSButton).title
+        Znak = "+"
+        First = Double(Int(NSString(string: Result.stringValue).intValue))
+        InvFirst = "0"
     }
     
-    @IBAction func theDot(_ sender: Any) {
-        theResult.stringValue = theResult.stringValue + "."
-    }
-    
-    @IBAction func theBrackets(_ sender: Any) {
-        if theResult.stringValue == "" {
-        theResult.stringValue = theResult.stringValue + "("
+    @IBAction func Dot(_ sender: Any) {
+        if Result.stringValue == ""
+        {
+        Result.stringValue = "0" + (sender as! NSButton).title
         }
-        else if theResult.stringValue != ""{
-        theResult.stringValue = theResult.stringValue + ")"
+        else
+        {
+        Result.stringValue += (sender as! NSButton).title
+        }
+    }
+    
+    
+    @IBAction func Brackets(_ sender: Any) {
+        if Result.stringValue == "" {
+        Result.stringValue += "("
+        }
+        else if Result.stringValue != ""{
+        Result.stringValue += ")"
         }
         
     }
@@ -121,40 +128,73 @@ class ViewController: NSViewController {
     
     //func
     
-    @IBAction func theClear(_ sender: Any) {
-        theResult.stringValue = ""
-        theInvFirst = ""
-        theFirst = ""
-        theSecond = ""
+    @IBAction func plusMinus(_ sender: Any) {
+        Result.stringValue += "-"
+    }
+    
+    
+    @IBAction func Clear(_ sender: Any) {
+        Result.stringValue = ""
+        InvFirst = "0"
+        First = 0
+        Second = 0
         
     }
     
-    @IBAction func theBackSpase(_ sender: Any) {
-        if theResult.stringValue == ""
+    
+    @IBAction func BackSpase(_ sender: Any) {
+        if Result.stringValue != ""
         {
-            
+            let ClearVar = Result.stringValue
+            Result.stringValue.remove(at: ClearVar.index(before: ClearVar.endIndex))
         }
-        else
-        {
-        var theClearVar = theResult.stringValue
-        theClearVar.remove(at: theClearVar.index(before: theClearVar.endIndex))
-        theResult.stringValue = theClearVar
-    }
     }
     
     //Finish
     
-    @IBAction func theFinish(_ sender: Any) {
-        if theZnak == "/" {
-        
+    
+    @IBAction func Finish(_ sender: Any) {
+        Second = Double(Int(NSString(string: InvFirst).intValue))
+        if Znak == "/" {
+        Otvet = (First) / (Second)
         }
         
+        if Znak == "*" {
+            Otvet = (First) * (Second)
+        }
         
+        if Znak == "+" {
+            Otvet = First + Second
+        }
+        
+        if Znak == "-" {
+            Otvet = First - Second
+        }
+       
+        Result.stringValue = "\(Otvet)"
     }
     
     
     
     //end
+    
+    //Mod
+    @IBOutlet weak var boxSimpe: NSBox!
+    
+    @IBAction func Simple(_ sender: Any) {
+       
+        
+            
+        
+    }
+    
+    @IBAction func Engineering(_ sender: Any) {
+    }
+    
+    
+
+    //end
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
