@@ -706,11 +706,11 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14q-GL-7hi">
-                                            <rect key="frame" x="109" y="76" width="50" height="32"/>
+                                            <rect key="frame" x="111" y="76" width="47" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="✕" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IQF-Rr-3rs">
+                                            <buttonCell key="cell" type="push" title="*" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IQF-Rr-3rs">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" size="13" name="ZapfDingbatsITC"/>
+                                                <font key="font" size="13" name="LucidaGrande"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="Multi:" target="XfG-lQ-9wD" id="7Vn-1g-GsV"/>
@@ -866,7 +866,7 @@
                                                             <action selector="Dot:" target="XfG-lQ-9wD" id="Rq6-Kx-Qyf"/>
                                                         </connections>
                                                     </button>
-                                                    <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G4f-vW-wyb">
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G4f-vW-wyb">
                                                         <rect key="frame" x="-6" y="-7" width="50" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="push" title="()" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MjR-1A-vX5">

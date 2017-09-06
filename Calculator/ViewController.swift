@@ -7,12 +7,14 @@
 //
 
 import Cocoa
-var Znak = "+"
+var Znak = ""
 var First:Double = 0
 var Second:Double = 0
 var Tree:Double = 0
 var InvFirst = ""
 var Otvet:Double = 0
+var dotSwich = false
+
 
 class ViewController: NSViewController {
     
@@ -32,39 +34,69 @@ class ViewController: NSViewController {
     @IBAction func Division(_ sender: Any) {
         Result.stringValue += (sender as! NSButton).title
         Znak = "/"
-        First = NSString(string: InvFirst).doubleValue
+        First = NSString(string: Result.stringValue).doubleValue
         InvFirst = ""
+        dotSwich = false
+       
     }
     
     @IBAction func Multi(_ sender: Any) {
         Result.stringValue += (sender as! NSButton).title
         Znak = "*"
-        First = NSString(string: InvFirst).doubleValue
+        First = NSString(string: Result.stringValue).doubleValue
         InvFirst = ""
+        dotSwich = false
+       
+    
     }
     
     @IBAction func Minus(_ sender: Any) {
+        if (Znak != "") && (InvFirst == "")
+        {
+        Result.stringValue += "("
+        Result.stringValue += (sender as! NSButton).title
+        InvFirst = "-"
+        }else{
         Result.stringValue += (sender as! NSButton).title
         Znak = "-"
-        First = NSString(string: InvFirst).doubleValue
+        First = NSString(string: Result.stringValue).doubleValue
         InvFirst = ""
+        dotSwich = false
+        }
+  
     }
     
     @IBAction func Plus(_ sender: Any) {
         Result.stringValue += (sender as! NSButton).title
         Znak = "+"
-        First = NSString(string: InvFirst).doubleValue
+        First = NSString(string: Result.stringValue).doubleValue
         InvFirst = ""
+        dotSwich = false
+       
+
     }
     
     @IBAction func Dot(_ sender: Any) {
-        if Result.stringValue == ""
+        if dotSwich == false
+        {
+            dotSwich = true
+        if (Result.stringValue == "")
         {
         Result.stringValue = "0" + (sender as! NSButton).title
+        InvFirst += "0."
+        }
+        else if InvFirst != ""
+        {
+            Result.stringValue += (sender as! NSButton).title
+            InvFirst += "."
         }
         else
         {
-        Result.stringValue += (sender as! NSButton).title
+        Result.stringValue += "0" + (sender as! NSButton).title
+            InvFirst += "0."
+        }
+        
+            
         }
     }
     
@@ -84,17 +116,45 @@ class ViewController: NSViewController {
     //func
     
     @IBAction func plusMinus(_ sender: Any) {
-        Result.stringValue += "-"
+        var refrashSimbol = 0
+    
+        if Znak == ""
+        {
+        if Result.stringValue == ""
+        {
+            Result.stringValue += "-"
+        }
+        else if Result.stringValue == "-"
+        {
+            Result.stringValue = ""
+            }
+            else
+        {
+            refrashSimbol = Int(NSString(string: Result.stringValue).intValue)
+            refrashSimbol = -refrashSimbol
+        Result.stringValue = "\(refrashSimbol)"
+        }
+        }else {
+            refrashSimbol = Int(NSString(string: InvFirst).intValue)
+            refrashSimbol = -refrashSimbol
+           
+        }
     }
+
+
     
     
     @IBAction func Clear(_ sender: Any) {
         Result.stringValue = ""
-        InvFirst = "0"
+        InvFirst = ""
         First = 0
         Second = 0
         Tree = 0
         Otvet = 0
+        dotSwich = false
+       
+        Znak = ""
+        
         
     }
     
@@ -111,7 +171,9 @@ class ViewController: NSViewController {
     
     
     @IBAction func Finish(_ sender: Any) {
+        
         Second = NSString(string: InvFirst).doubleValue
+        
         if Otvet == 0 {
         if Second != 0
         {
@@ -130,14 +192,25 @@ class ViewController: NSViewController {
         if Znak == "-" {
             Otvet = First - Second
         }
-        Result.stringValue = "\(Otvet)"
+        let simpleOtvet = "\(Otvet)"
+        let simplOtverArray = simpleOtvet.components(separatedBy: ".")
+            if simplOtverArray[1] == "0"
+            {
+            Result.stringValue = "\(simplOtverArray[0])"
             Tree = Otvet
             InvFirst = ""
+                Znak = ""
+               
+            }else{
+                Result.stringValue = "\(Otvet)"
+                Znak = ""
+            }
 
         }
         else
         {
             Result.stringValue = "∞"
+            Znak = ""
         }
         }
         else
@@ -159,14 +232,23 @@ class ViewController: NSViewController {
                 if Znak == "-" {
                     Otvet = Tree - Second
                 }
-                Result.stringValue = "\(Otvet)"
-                Tree = Otvet
-                InvFirst = ""
-                
+                let simpleOtvet = "\(Otvet)"
+                let simplOtverArray = simpleOtvet.components(separatedBy: ".")
+                if simplOtverArray[1] == "0"
+                {
+                    Result.stringValue = "\(simplOtverArray[0])"
+                    Tree = Otvet
+                    InvFirst = ""
+                    Znak = ""
+                }else{
+                    Result.stringValue = "\(Otvet)"
+                    Znak = ""
+                }
             }
             else
             {
                 Result.stringValue = "∞"
+                Znak = ""
             }
         }
             }
