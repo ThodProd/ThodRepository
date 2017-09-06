@@ -10,6 +10,7 @@ import Cocoa
 var Znak = "+"
 var First:Double = 0
 var Second:Double = 0
+var Tree:Double = 0
 var InvFirst = ""
 var Otvet:Double = 0
 
@@ -19,56 +20,10 @@ class ViewController: NSViewController {
     
     
     //oneTwoTree
-    @IBAction func Zerro(_ sender: Any) {
+    @IBAction func allSimbols(_ sender: Any) {
         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "0"
+        InvFirst += (sender as! NSButton).title
     }
-   
-    @IBAction func One(_ sender: Any) {
-         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "1"
-    }
-    
-    @IBAction func Two(_ sender: Any) {
-         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "2"
-    }
-    
-    @IBAction func Tree(_ sender: Any) {
-        Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "3"
-    }
-    
-    @IBAction func Four(_ sender: Any) {
-         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "4"
-    }
-    
-    @IBAction func Five(_ sender: Any) {
-         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "5"
-    }
-    
-    @IBAction func Six(_ sender: Any) {
-         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "6"
-    }
-    
-    @IBAction func Seven(_ sender: Any) {
-         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "7"
-    }
-    
-    @IBAction func Eight(_ sender: Any) {
-         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "8"
-    }
-    
-    @IBAction func Nine(_ sender: Any) {
-         Result.stringValue += (sender as! NSButton).title
-        InvFirst = InvFirst + "9"
-    }
-    
     //end
     
     
@@ -77,29 +32,29 @@ class ViewController: NSViewController {
     @IBAction func Division(_ sender: Any) {
         Result.stringValue += (sender as! NSButton).title
         Znak = "/"
-        First = Double(Int(NSString(string: Result.stringValue).intValue))
-        InvFirst = "0"
+        First = NSString(string: InvFirst).doubleValue
+        InvFirst = ""
     }
     
     @IBAction func Multi(_ sender: Any) {
         Result.stringValue += (sender as! NSButton).title
         Znak = "*"
-        First = Double(Int(NSString(string: Result.stringValue).intValue))
-        InvFirst = "0"
+        First = NSString(string: InvFirst).doubleValue
+        InvFirst = ""
     }
     
     @IBAction func Minus(_ sender: Any) {
         Result.stringValue += (sender as! NSButton).title
         Znak = "-"
-        First = Double(Int(NSString(string: Result.stringValue).intValue))
-        InvFirst = "0"
+        First = NSString(string: InvFirst).doubleValue
+        InvFirst = ""
     }
     
     @IBAction func Plus(_ sender: Any) {
         Result.stringValue += (sender as! NSButton).title
         Znak = "+"
-        First = Double(Int(NSString(string: Result.stringValue).intValue))
-        InvFirst = "0"
+        First = NSString(string: InvFirst).doubleValue
+        InvFirst = ""
     }
     
     @IBAction func Dot(_ sender: Any) {
@@ -138,6 +93,8 @@ class ViewController: NSViewController {
         InvFirst = "0"
         First = 0
         Second = 0
+        Tree = 0
+        Otvet = 0
         
     }
     
@@ -154,9 +111,12 @@ class ViewController: NSViewController {
     
     
     @IBAction func Finish(_ sender: Any) {
-        Second = Double(Int(NSString(string: InvFirst).intValue))
+        Second = NSString(string: InvFirst).doubleValue
+        if Otvet == 0 {
+        if Second != 0
+        {
         if Znak == "/" {
-        Otvet = (First) / (Second)
+            Otvet = (First) / (Second)
         }
         
         if Znak == "*" {
@@ -170,9 +130,46 @@ class ViewController: NSViewController {
         if Znak == "-" {
             Otvet = First - Second
         }
-       
         Result.stringValue = "\(Otvet)"
-    }
+            Tree = Otvet
+            InvFirst = ""
+
+        }
+        else
+        {
+            Result.stringValue = "∞"
+        }
+        }
+        else
+        {
+            if Second != 0
+            {
+                if Znak == "/" {
+                    Otvet = (Tree) / (Second)
+                }
+                
+                if Znak == "*" {
+                    Otvet = (Tree) * (Second)
+                }
+                
+                if Znak == "+" {
+                    Otvet = Tree + Second
+                }
+                
+                if Znak == "-" {
+                    Otvet = Tree - Second
+                }
+                Result.stringValue = "\(Otvet)"
+                Tree = Otvet
+                InvFirst = ""
+                
+            }
+            else
+            {
+                Result.stringValue = "∞"
+            }
+        }
+            }
     
     
     

@@ -706,11 +706,11 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14q-GL-7hi">
-                                            <rect key="frame" x="111" y="76" width="45" height="32"/>
+                                            <rect key="frame" x="109" y="76" width="50" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="*" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IQF-Rr-3rs">
+                                            <buttonCell key="cell" type="push" title="✕" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IQF-Rr-3rs">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="13" name="ZapfDingbatsITC"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="Multi:" target="XfG-lQ-9wD" id="7Vn-1g-GsV"/>
@@ -728,11 +728,11 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XUO-JR-CDJ">
-                                            <rect key="frame" x="111" y="98" width="45" height="32"/>
+                                            <rect key="frame" x="109" y="98" width="49" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="/" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kek-1G-dap">
+                                            <buttonCell key="cell" type="push" title="÷" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kek-1G-dap">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="13" name="Helvetica"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="Division:" target="XfG-lQ-9wD" id="pem-wG-Q6J"/>
@@ -764,7 +764,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="One:" target="XfG-lQ-9wD" id="pJ3-2Y-27F"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="fKn-oC-o8g"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgw-S8-zGH">
@@ -775,7 +775,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Two:" target="XfG-lQ-9wD" id="zvh-WL-ABL"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="NTq-gm-00t"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8c-MH-3cW">
@@ -786,7 +786,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Tree:" target="XfG-lQ-9wD" id="oz0-vD-MCs"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="f8i-dr-1gs"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvQ-Ef-0EO">
@@ -797,7 +797,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Five:" target="XfG-lQ-9wD" id="W0T-Kw-UhF"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="Pvu-ne-Cx5"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3l-iM-o94">
@@ -808,7 +808,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Six:" target="XfG-lQ-9wD" id="XE0-Fw-Qhc"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="gvr-wW-2Pf"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wk-kH-c4x">
@@ -819,7 +819,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Nine:" target="XfG-lQ-9wD" id="4Hl-qt-1TT"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="wnk-j7-OAN"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrX-9f-tGN">
@@ -830,7 +830,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Eight:" target="XfG-lQ-9wD" id="Pjx-IZ-Ldm"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="tSg-5l-d1K"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fd-XL-nSF">
@@ -841,7 +841,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Seven:" target="XfG-lQ-9wD" id="TYh-p7-KMV"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="L1X-PC-6hh"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQV-dR-7ya">
@@ -852,13 +852,13 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Zerro:" target="XfG-lQ-9wD" id="48t-fh-QrO"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="52A-1B-Pyg"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pP-Wn-mxa">
                                                         <rect key="frame" x="69" y="-7" width="48" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="push" title="," bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kyF-ai-KTg">
+                                                        <buttonCell key="cell" type="push" title="." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kyF-ai-KTg">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
@@ -885,7 +885,7 @@
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="Four:" target="XfG-lQ-9wD" id="TNq-dx-99z"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="CAi-Kx-BsC"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -903,11 +903,11 @@
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-Fd-59H">
-                                            <rect key="frame" x="31" y="98" width="48" height="32"/>
+                                            <rect key="frame" x="29" y="98" width="53" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="←" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BDy-D1-jRF">
+                                            <buttonCell key="cell" type="push" title="⏎" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BDy-D1-jRF">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" size="13" name="Helvetica"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="BackSpase:" target="XfG-lQ-9wD" id="Coj-eU-Pyr"/>
@@ -943,7 +943,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Простой" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55M-c1-gm0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="9"/>
+                                    <font key="font" metaFont="miniSystem"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="Simple:" target="XfG-lQ-9wD" id="zbI-cY-diR"/>
@@ -954,7 +954,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Инженерный" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qa3-mu-mgW">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="9"/>
+                                    <font key="font" metaFont="miniSystem"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="Engineering:" target="XfG-lQ-9wD" id="Pg4-4n-saT"/>
@@ -974,6 +974,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="dd:" target="XfG-lQ-9wD" id="24N-5G-PW2"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T32-cG-9JF">
                                             <rect key="frame" x="-6" y="64" width="81" height="32"/>
