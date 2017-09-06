@@ -14,7 +14,7 @@ var Tree:Double = 0
 var InvFirst = ""
 var Otvet:Double = 0
 var dotSwich = false
-
+var swichZnak = false
 
 class ViewController: NSViewController {
     
@@ -32,22 +32,31 @@ class ViewController: NSViewController {
     //Symbol
     
     @IBAction func Division(_ sender: Any) {
+        if Result.stringValue == ""{}
+        else{
+        if swichZnak == false{
+        swichZnak = true
         Result.stringValue += (sender as! NSButton).title
         Znak = "/"
         First = NSString(string: Result.stringValue).doubleValue
         InvFirst = ""
         dotSwich = false
-       
+            }
+        }
     }
     
     @IBAction func Multi(_ sender: Any) {
+        if Result.stringValue == ""{}
+        else{
+        if swichZnak == false{
+        swichZnak = true
         Result.stringValue += (sender as! NSButton).title
         Znak = "*"
         First = NSString(string: Result.stringValue).doubleValue
         InvFirst = ""
         dotSwich = false
-       
-    
+        }
+        }
     }
     
     @IBAction func Minus(_ sender: Any) {
@@ -67,13 +76,17 @@ class ViewController: NSViewController {
     }
     
     @IBAction func Plus(_ sender: Any) {
+        if Result.stringValue == ""{}
+        else{
+        if swichZnak == false{
+        swichZnak = true
         Result.stringValue += (sender as! NSButton).title
         Znak = "+"
         First = NSString(string: Result.stringValue).doubleValue
         InvFirst = ""
         dotSwich = false
-       
-
+        }
+        }
     }
     
     @IBAction func Dot(_ sender: Any) {
@@ -152,7 +165,7 @@ class ViewController: NSViewController {
         Tree = 0
         Otvet = 0
         dotSwich = false
-       
+        swichZnak = false
         Znak = ""
         
         
@@ -162,8 +175,13 @@ class ViewController: NSViewController {
     @IBAction func BackSpase(_ sender: Any) {
         if Result.stringValue != ""
         {
-            let ClearVar = Result.stringValue
-            Result.stringValue.remove(at: ClearVar.index(before: ClearVar.endIndex))
+            let clearVar = Result.stringValue
+            Result.stringValue.remove(at: clearVar.index(before: clearVar.endIndex))
+            let clearInvFirst = InvFirst
+            if clearInvFirst == ""{}
+            else{
+            InvFirst.remove(at: clearInvFirst.index(before: clearInvFirst.endIndex))
+            }
         }
     }
     
@@ -171,7 +189,7 @@ class ViewController: NSViewController {
     
     
     @IBAction func Finish(_ sender: Any) {
-        
+        swichZnak = false
         Second = NSString(string: InvFirst).doubleValue
         
         if Otvet == 0 {
@@ -200,7 +218,6 @@ class ViewController: NSViewController {
             Tree = Otvet
             InvFirst = ""
                 Znak = ""
-               
             }else{
                 Result.stringValue = "\(Otvet)"
                 Znak = ""
@@ -238,7 +255,6 @@ class ViewController: NSViewController {
                 {
                     Result.stringValue = "\(simplOtverArray[0])"
                     Tree = Otvet
-                    InvFirst = ""
                     Znak = ""
                 }else{
                     Result.stringValue = "\(Otvet)"
