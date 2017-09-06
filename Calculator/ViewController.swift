@@ -23,8 +23,10 @@ class ViewController: NSViewController {
     
     //oneTwoTree
     @IBAction func allSimbols(_ sender: Any) {
+        if Result.stringValue == "nil" {Result.stringValue = ""}else{
         Result.stringValue += (sender as! NSButton).title
         InvFirst += (sender as! NSButton).title
+    }
     }
     //end
     
@@ -189,6 +191,7 @@ class ViewController: NSViewController {
     
     
     @IBAction func Finish(_ sender: Any) {
+        if Result.stringValue == "" || Result.stringValue == "nil" {Result.stringValue = "nil"}else{
         swichZnak = false
         Second = NSString(string: InvFirst).doubleValue
         
@@ -268,7 +271,7 @@ class ViewController: NSViewController {
             }
         }
             }
-    
+    }
     
     
     //end
