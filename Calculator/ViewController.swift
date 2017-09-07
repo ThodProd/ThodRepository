@@ -11,18 +11,20 @@ var Znak = ""
 var First:Double = 0
 var Second:Double = 0
 var Tree:Double = 0
+var rootInv:Double = 0
+var buttonN:Double = 1
 var InvFirst = ""
 var Otvet:Double = 0
 var dotSwich = false
 var swichZnak = false
 var swichMod = true
+var swichMulti = false
 
 class ViewController: NSViewController {
     
     @IBOutlet weak var boxSimpe: NSBox!
     @IBOutlet weak var boxXY: NSBox!
     @IBOutlet weak var Result: NSTextField!
-    @IBOutlet weak var endResult: NSScrollView!
 
     //oneTwoTree
     @IBAction func allSimbols(_ sender: Any) {
@@ -129,6 +131,54 @@ class ViewController: NSViewController {
         
     }
     
+    @IBAction func Root(_ sender: Any) {
+        rootInv = NSString(string: Result.stringValue).doubleValue
+        let rootToAr = "\(sqrt(rootInv))"
+        let rootArray = rootToAr.components(separatedBy: ".")
+        if rootArray[1] == "0"
+        {
+            Result.stringValue = "\(rootArray[0])"
+        }else{
+            Result.stringValue = "\(sqrt(rootInv))"
+        }
+    }
+    
+    @IBAction func squared(_ sender: Any) {
+        rootInv = NSString(string: Result.stringValue).doubleValue
+        let squToAr = "\(pow(rootInv, 2))"
+        let squArray = squToAr.components(separatedBy: ".")
+        if squArray[1] == "0"
+        {
+            Result.stringValue = "\(squArray[0])"
+        }else{
+        Result.stringValue = "\(pow(rootInv, 2))"
+        }
+    }
+    
+    @IBAction func squaredN(_ sender: Any) {
+        swichMulti = true
+        rootInv = NSString(string: Result.stringValue).doubleValue
+        Result.stringValue += "ˆ("
+        InvFirst = ""
+        if InvFirst == ""{}
+    }
+    
+    @IBAction func percent(_ sender: Any) {
+        if Result.stringValue == ""{}
+        else{
+        rootInv = NSString(string: Result.stringValue).doubleValue
+        Result.stringValue = "\(rootInv / 100)"
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     //end
     
     //func
@@ -172,8 +222,8 @@ class ViewController: NSViewController {
         dotSwich = false
         swichZnak = false
         Znak = ""
-        
-        
+        rootInv = 0
+        swichMulti = false
     }
     
     
@@ -194,6 +244,13 @@ class ViewController: NSViewController {
     
     
     @IBAction func Finish(_ sender: Any) {
+        if swichMulti == true{
+            buttonN = NSString(string: InvFirst).doubleValue
+            let nToAr = "\(pow(rootInv,buttonN))"
+            let nArray = nToAr.components(separatedBy: ".")
+            Result.stringValue = "\(nArray[0])"
+            swichMulti = false
+            }else{
         if Result.stringValue == "" || Result.stringValue == "nil" {Result.stringValue = "nil"}else{
         swichZnak = false
         Second = NSString(string: InvFirst).doubleValue
@@ -274,6 +331,7 @@ class ViewController: NSViewController {
             }
         }
             }
+        }
     }
     
     
@@ -284,10 +342,9 @@ class ViewController: NSViewController {
     
     @IBAction func Simple(_ sender: Any) {
         boxXY.isHidden = true
-        endResult.isHidden = true
-        boxSimpe.frame.origin.y = 250
+        boxSimpe.frame.origin.y = 44
         boxSimpe.frame.origin.x = 20
-        Result.frame.origin.y = 385
+        Result.frame.origin.y = 180
         Result.frame.origin.x = 20
 
         
@@ -296,11 +353,12 @@ class ViewController: NSViewController {
     
     @IBAction func Engineering(_ sender: Any) {
         boxXY.isHidden = false
-        endResult.isHidden = false
-        boxSimpe.frame.origin.y = 216
+        boxSimpe.frame.origin.y = 20
         boxSimpe.frame.origin.x = 20
-        Result.frame.origin.y = 372
+        Result.frame.origin.y = 180
         Result.frame.origin.x = 20
+        boxXY.frame.origin.y = 150
+        boxXY.frame.origin.x = 20
         
 
     }
