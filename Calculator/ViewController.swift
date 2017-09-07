@@ -15,12 +15,15 @@ var InvFirst = ""
 var Otvet:Double = 0
 var dotSwich = false
 var swichZnak = false
+var swichMod = true
 
 class ViewController: NSViewController {
     
+    @IBOutlet weak var boxSimpe: NSBox!
+    @IBOutlet weak var boxXY: NSBox!
     @IBOutlet weak var Result: NSTextField!
-    
-    
+    @IBOutlet weak var endResult: NSScrollView!
+
     //oneTwoTree
     @IBAction func allSimbols(_ sender: Any) {
         if Result.stringValue == "nil" {Result.stringValue = ""}else{
@@ -277,16 +280,29 @@ class ViewController: NSViewController {
     //end
     
     //Mod
-    @IBOutlet weak var boxSimpe: NSBox!
+    
     
     @IBAction func Simple(_ sender: Any) {
-       
+        boxXY.isHidden = true
+        endResult.isHidden = true
+        boxSimpe.frame.origin.y = 250
+        boxSimpe.frame.origin.x = 20
+        Result.frame.origin.y = 385
+        Result.frame.origin.x = 20
+
         
-            
         
     }
     
     @IBAction func Engineering(_ sender: Any) {
+        boxXY.isHidden = false
+        endResult.isHidden = false
+        boxSimpe.frame.origin.y = 216
+        boxSimpe.frame.origin.x = 20
+        Result.frame.origin.y = 372
+        Result.frame.origin.x = 20
+        
+
     }
     
     
