@@ -738,8 +738,17 @@
                                     <action selector="theBrackets:" target="XfG-lQ-9wD" id="zqK-Gc-N3f"/>
                                 </connections>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mU5-K2-U19">
+                                <rect key="frame" x="0.0" y="0.0" width="173" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ThodProdⒸ" id="Ec2-VB-0Of">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="WQp-pz-WqB">
-                                <rect key="frame" x="20" y="20" width="151" height="128"/>
+                                <rect key="frame" x="20" y="44" width="151" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="5JD-7n-GwI">
                                     <rect key="frame" x="1" y="1" width="149" height="126"/>
