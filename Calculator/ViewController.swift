@@ -19,6 +19,8 @@ var dotSwich = false
 var swichSign = false
 var swichMod = true
 var swichMulti = false
+var swichMinus = false
+var swichMinesSign: String = ""
 
 class ViewController: NSViewController {
     
@@ -28,7 +30,7 @@ class ViewController: NSViewController {
 
     //oneTwoTree
     @IBAction func allSimbols(_ sender: Any) {
-        if Result.stringValue == "nil"
+        if Result.stringValue == "nil" || Result.stringValue == "0"
         {
             Result.stringValue = ""
         
@@ -48,13 +50,13 @@ class ViewController: NSViewController {
         if Result.stringValue == ""{}
             
         else
-        {
+       {
         if swichSign == false
         {
             swichSign = true
+            First = NSString(string: Result.stringValue).doubleValue
             Result.stringValue += (sender as! NSButton).title
             sign = "/"
-            First = NSString(string: Result.stringValue).doubleValue
             InvFirst = ""
             dotSwich = false
             
@@ -69,9 +71,10 @@ class ViewController: NSViewController {
         if swichSign == false
         {
             swichSign = true
+            First = NSString(string: Result.stringValue).doubleValue
+
             Result.stringValue += (sender as! NSButton).title
             sign = "*"
-            First = NSString(string: Result.stringValue).doubleValue
             InvFirst = ""
             dotSwich = false
             
@@ -80,18 +83,21 @@ class ViewController: NSViewController {
     }
     
     @IBAction func Minus(_ sender: Any) {
-        if (sign != "") && (InvFirst == "")
+        if (sign != "") && (Second == 0)
         {
-            Result.stringValue += "("
-            Result.stringValue += (sender as! NSButton).title
-            InvFirst = "-"
-            
+            if swichMinus == false
+            {
+                Result.stringValue += "("
+                Result.stringValue += (sender as! NSButton).title
+                InvFirst = "-"
+                swichMinus = true
+            }
         }
         else
         {
+            First = NSString(string: Result.stringValue).doubleValue
             Result.stringValue += (sender as! NSButton).title
             sign = "-"
-            First = NSString(string: Result.stringValue).doubleValue
             InvFirst = ""
             dotSwich = false
             
@@ -106,9 +112,9 @@ class ViewController: NSViewController {
         if swichSign == false
         {
             swichSign = true
+            First = NSString(string: Result.stringValue).doubleValue
             Result.stringValue += (sender as! NSButton).title
             sign = "+"
-            First = NSString(string: Result.stringValue).doubleValue
             InvFirst = ""
             dotSwich = false
             
@@ -160,6 +166,9 @@ class ViewController: NSViewController {
     
     @IBAction func Root(_ sender: Any) {
         rootInv = NSString(string: Result.stringValue).doubleValue
+        if rootInv < 0 {}
+        else
+        {
         let rootToAr = "\(sqrt(rootInv))"
         let rootArray = rootToAr.components(separatedBy: ".")
         if rootArray[1] == "0"
@@ -172,6 +181,7 @@ class ViewController: NSViewController {
             Result.stringValue = "\(sqrt(rootInv))"
             
         }
+    }
     }
     
     @IBAction func squared(_ sender: Any) {
@@ -240,6 +250,8 @@ class ViewController: NSViewController {
             refrashSimbol = Int(NSString(string: Result.stringValue).intValue)
             refrashSimbol = -refrashSimbol
             Result.stringValue = "\(refrashSimbol)"
+            answer = -answer
+            Tree = -Tree
             
         }
         }
@@ -247,7 +259,9 @@ class ViewController: NSViewController {
         {
             refrashSimbol = Int(NSString(string: InvFirst).intValue)
             refrashSimbol = -refrashSimbol
-           
+            answer = -answer
+            Tree = -Tree
+
         }
     }
 
@@ -266,23 +280,37 @@ class ViewController: NSViewController {
         sign = ""
         rootInv = 0
         swichMulti = false
+
     }
     
     
     @IBAction func BackSpase(_ sender: Any) {
-        if Result.stringValue != ""
-        {
-        let clearVar = Result.stringValue
-        Result.stringValue.remove(at: clearVar.index(before: clearVar.endIndex))
-        let clearInvFirst = InvFirst
-        if clearInvFirst == ""{}
-        
+        if Result.stringValue == "" {}
         else
         {
-            InvFirst.remove(at: clearInvFirst.index(before: clearInvFirst.endIndex))
-            
+        
+        if sign == ""
+        {
+            let clearVarRes = Result.stringValue
+            Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
         }
-        }
+        else
+        {
+        let clearVar = Result.stringValue
+        let clearVarToArr = "\(clearVar)"
+        let clearVarArray = clearVarToArr.components(separatedBy: sign)
+        if clearVarArray[1] == ""
+        {
+        let clearVarRes = Result.stringValue
+        Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
+            sign = ""
+            swichSign = false
+        }else{
+            let clearVarRes = Result.stringValue
+            Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
+                }
+            }
+    }
     }
     
     //Finish
@@ -309,8 +337,6 @@ class ViewController: NSViewController {
             Second = NSString(string: InvFirst).doubleValue
         
         if answer == 0 {
-        if Second != 0
-        {
         if sign == "/"
         {
             answer = (First) / (Second)
@@ -346,18 +372,10 @@ class ViewController: NSViewController {
         Result.stringValue = "\(answer)"
         sign = ""
             
+        
         }
         }
         else
-        {
-            Result.stringValue = "∞"
-            sign = ""
-            
-        }
-        }
-        else
-        {
-        if Second != 0
         {
         if sign == "/"
         {
@@ -393,13 +411,7 @@ class ViewController: NSViewController {
             Result.stringValue = "\(answer)"
             sign = ""
             
-        }
-        }
-        else
-        {
-            Result.stringValue = "∞"
-            sign = ""
-            
+        
         }
         }
         }
