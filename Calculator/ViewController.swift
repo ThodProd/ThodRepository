@@ -27,20 +27,24 @@ class ViewController: NSViewController {
     @IBOutlet weak var boxSimpe: NSBox!
     @IBOutlet weak var boxXY: NSBox!
     @IBOutlet weak var Result: NSTextField!
-
+    @IBOutlet weak var boxSin: NSBox!
+    
+    
+    
     //oneTwoTree
     @IBAction func allSimbols(_ sender: Any) {
+        
         if Result.stringValue == "nil" || Result.stringValue == "0"
         {
             Result.stringValue = ""
-        
+            
         }
         else
         {
             Result.stringValue += (sender as! NSButton).title
             InvFirst += (sender as! NSButton).title
         }
-        }
+    }
     //end
     
     
@@ -50,17 +54,17 @@ class ViewController: NSViewController {
         if Result.stringValue == ""{}
             
         else
-       {
-        if swichSign == false
         {
-            swichSign = true
-            First = NSString(string: Result.stringValue).doubleValue
-            Result.stringValue += (sender as! NSButton).title
-            sign = "/"
-            InvFirst = ""
-            dotSwich = false
-            
-        }
+            if swichSign == false
+            {
+                swichSign = true
+                First = NSString(string: Result.stringValue).doubleValue
+                Result.stringValue += (sender as! NSButton).title
+                sign = "/"
+                InvFirst = ""
+                dotSwich = false
+                
+            }
         }
     }
     
@@ -68,17 +72,17 @@ class ViewController: NSViewController {
         if Result.stringValue == ""{}
         else
         {
-        if swichSign == false
-        {
-            swichSign = true
-            First = NSString(string: Result.stringValue).doubleValue
-
-            Result.stringValue += (sender as! NSButton).title
-            sign = "*"
-            InvFirst = ""
-            dotSwich = false
-            
-        }
+            if swichSign == false
+            {
+                swichSign = true
+                First = NSString(string: Result.stringValue).doubleValue
+                
+                Result.stringValue += (sender as! NSButton).title
+                sign = "*"
+                InvFirst = ""
+                dotSwich = false
+                
+            }
         }
     }
     
@@ -102,23 +106,23 @@ class ViewController: NSViewController {
             dotSwich = false
             
         }
-  
+        
     }
     
     @IBAction func Plus(_ sender: Any) {
         if Result.stringValue == ""{}
         else
         {
-        if swichSign == false
-        {
-            swichSign = true
-            First = NSString(string: Result.stringValue).doubleValue
-            Result.stringValue += (sender as! NSButton).title
-            sign = "+"
-            InvFirst = ""
-            dotSwich = false
-            
-        }
+            if swichSign == false
+            {
+                swichSign = true
+                First = NSString(string: Result.stringValue).doubleValue
+                Result.stringValue += (sender as! NSButton).title
+                sign = "+"
+                InvFirst = ""
+                dotSwich = false
+                
+            }
         }
     }
     
@@ -126,25 +130,25 @@ class ViewController: NSViewController {
         if dotSwich == false
         {
             dotSwich = true
-        if (Result.stringValue == "")
-        {
-            Result.stringValue = "0" + (sender as! NSButton).title
-            InvFirst += "0."
+            if (Result.stringValue == "")
+            {
+                Result.stringValue = "0" + (sender as! NSButton).title
+                InvFirst += "0."
+                
+            }
+            else if InvFirst != ""
+            {
+                Result.stringValue += (sender as! NSButton).title
+                InvFirst += "."
+                
+            }
+            else
+            {
+                Result.stringValue += "0" + (sender as! NSButton).title
+                InvFirst += "0."
+                
+            }
             
-        }
-        else if InvFirst != ""
-        {
-            Result.stringValue += (sender as! NSButton).title
-            InvFirst += "."
-            
-        }
-        else
-        {
-            Result.stringValue += "0" + (sender as! NSButton).title
-            InvFirst += "0."
-            
-        }
-        
             
         }
     }
@@ -169,19 +173,19 @@ class ViewController: NSViewController {
         if rootInv < 0 {}
         else
         {
-        let rootToAr = "\(sqrt(rootInv))"
-        let rootArray = rootToAr.components(separatedBy: ".")
-        if rootArray[1] == "0"
-        {
-            Result.stringValue = "\(rootArray[0])"
-            
+            let rootToAr = "\(sqrt(rootInv))"
+            let rootArray = rootToAr.components(separatedBy: ".")
+            if rootArray[1] == "0"
+            {
+                Result.stringValue = "\(rootArray[0])"
+                
+            }
+            else
+            {
+                Result.stringValue = "\(sqrt(rootInv))"
+                
+            }
         }
-        else
-        {
-            Result.stringValue = "\(sqrt(rootInv))"
-            
-        }
-    }
     }
     
     @IBAction func squared(_ sender: Any) {
@@ -232,28 +236,28 @@ class ViewController: NSViewController {
     
     @IBAction func plusMinus(_ sender: Any) {
         var refrashSimbol = 0
-    
+        
         if sign == ""
         {
-        if Result.stringValue == ""
-        {
-            Result.stringValue += "-"
-            
-        }
-        else if Result.stringValue == "-"
-        {
-            Result.stringValue = ""
-            
-        }
-        else
-        {
-            refrashSimbol = Int(NSString(string: Result.stringValue).intValue)
-            refrashSimbol = -refrashSimbol
-            Result.stringValue = "\(refrashSimbol)"
-            answer = -answer
-            Tree = -Tree
-            
-        }
+            if Result.stringValue == ""
+            {
+                Result.stringValue += "-"
+                
+            }
+            else if Result.stringValue == "-"
+            {
+                Result.stringValue = ""
+                
+            }
+            else
+            {
+                refrashSimbol = Int(NSString(string: Result.stringValue).intValue)
+                refrashSimbol = -refrashSimbol
+                Result.stringValue = "\(refrashSimbol)"
+                answer = -answer
+                Tree = -Tree
+                
+            }
         }
         else
         {
@@ -261,11 +265,11 @@ class ViewController: NSViewController {
             refrashSimbol = -refrashSimbol
             answer = -answer
             Tree = -Tree
-
+            
         }
     }
-
-
+    
+    
     
     
     @IBAction func Clear(_ sender: Any) {
@@ -280,7 +284,7 @@ class ViewController: NSViewController {
         sign = ""
         rootInv = 0
         swichMulti = false
-
+        
     }
     
     
@@ -288,29 +292,29 @@ class ViewController: NSViewController {
         if Result.stringValue == "" {}
         else
         {
-        
-        if sign == ""
-        {
-            let clearVarRes = Result.stringValue
-            Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
-        }
-        else
-        {
-        let clearVar = Result.stringValue
-        let clearVarToArr = "\(clearVar)"
-        let clearVarArray = clearVarToArr.components(separatedBy: sign)
-        if clearVarArray[1] == ""
-        {
-        let clearVarRes = Result.stringValue
-        Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
-            sign = ""
-            swichSign = false
-        }else{
-            let clearVarRes = Result.stringValue
-            Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
+            
+            if sign == ""
+            {
+                let clearVarRes = Result.stringValue
+                Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
+            }
+            else
+            {
+                let clearVar = Result.stringValue
+                let clearVarToArr = "\(clearVar)"
+                let clearVarArray = clearVarToArr.components(separatedBy: sign)
+                if clearVarArray[1] == ""
+                {
+                    let clearVarRes = Result.stringValue
+                    Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
+                    sign = ""
+                    swichSign = false
+                }else{
+                    let clearVarRes = Result.stringValue
+                    Result.stringValue.remove(at: clearVarRes.index(before: clearVarRes.endIndex))
                 }
             }
-    }
+        }
     }
     
     //Finish
@@ -328,93 +332,93 @@ class ViewController: NSViewController {
         }
         else
         {
-        if Result.stringValue == "" || Result.stringValue == "nil" {Result.stringValue = "nil"
-            
-        }
-        else
-        {
-            swichSign = false
-            Second = NSString(string: InvFirst).doubleValue
-        
-        if answer == 0 {
-        if sign == "/"
-        {
-            answer = (First) / (Second)
-            
-        }
-        if sign == "*"
-        {
-            answer = (First) * (Second)
-            
-        }
-        if sign == "+"
-        {
-            answer = First + Second
-            
-        }
-        if sign == "-"
-        {
-            answer = First - Second
-            
-        }
-        let simpleOtvet = "\(answer)"
-        let simplOtverArray = simpleOtvet.components(separatedBy: ".")
-        if simplOtverArray[1] == "0"
-        {
-            Result.stringValue = "\(simplOtverArray[0])"
-            Tree = answer
-            InvFirst = ""
-            sign = ""
-            
-        }
-        else
-        {
-        Result.stringValue = "\(answer)"
-        sign = ""
-            
-        
-        }
-        }
-        else
-        {
-        if sign == "/"
-        {
-            answer = (Tree) / (Second)
-            
-        }
-        if sign == "*"
-        {
-            answer = (Tree) * (Second)
-            
-        }
-        if sign == "+"
-        {
-            answer = Tree + Second
-            
-        }
-        if sign == "-"
-        {
-            answer = Tree - Second
-            
-        }
-        let simpleOtvet = "\(answer)"
-        let simplOtverArray = simpleOtvet.components(separatedBy: ".")
-        if simplOtverArray[1] == "0"
-        {
-            Result.stringValue = "\(simplOtverArray[0])"
-            Tree = answer
-            sign = ""
-            
-        }
-        else
-        {
-            Result.stringValue = "\(answer)"
-            sign = ""
-            
-        
-        }
-        }
-        }
+            if Result.stringValue == "" || Result.stringValue == "nil" {Result.stringValue = "nil"
+                
+            }
+            else
+            {
+                swichSign = false
+                Second = NSString(string: InvFirst).doubleValue
+                
+                if answer == 0 {
+                    if sign == "/"
+                    {
+                        answer = (First) / (Second)
+                        
+                    }
+                    if sign == "*"
+                    {
+                        answer = (First) * (Second)
+                        
+                    }
+                    if sign == "+"
+                    {
+                        answer = First + Second
+                        
+                    }
+                    if sign == "-"
+                    {
+                        answer = First - Second
+                        
+                    }
+                    let simpleOtvet = "\(answer)"
+                    let simplOtverArray = simpleOtvet.components(separatedBy: ".")
+                    if simplOtverArray[1] == "0"
+                    {
+                        Result.stringValue = "\(simplOtverArray[0])"
+                        Tree = answer
+                        InvFirst = ""
+                        sign = ""
+                        
+                    }
+                    else
+                    {
+                        Result.stringValue = "\(answer)"
+                        sign = ""
+                        
+                        
+                    }
+                }
+                else
+                {
+                    if sign == "/"
+                    {
+                        answer = (Tree) / (Second)
+                        
+                    }
+                    if sign == "*"
+                    {
+                        answer = (Tree) * (Second)
+                        
+                    }
+                    if sign == "+"
+                    {
+                        answer = Tree + Second
+                        
+                    }
+                    if sign == "-"
+                    {
+                        answer = Tree - Second
+                        
+                    }
+                    let simpleOtvet = "\(answer)"
+                    let simplOtverArray = simpleOtvet.components(separatedBy: ".")
+                    if simplOtverArray[1] == "0"
+                    {
+                        Result.stringValue = "\(simplOtverArray[0])"
+                        Tree = answer
+                        sign = ""
+                        
+                    }
+                    else
+                    {
+                        Result.stringValue = "\(answer)"
+                        sign = ""
+                        
+                        
+                    }
+                }
+            }
         }
     }
     
@@ -426,43 +430,45 @@ class ViewController: NSViewController {
     
     @IBAction func Simple(_ sender: Any) {
         boxXY.isHidden = true
-        boxSimpe.frame.origin.y = 44
+        boxSin.isHidden = true
+        boxSimpe.frame.origin.y = 70
         boxSimpe.frame.origin.x = 20
-        Result.frame.origin.y = 180
+        Result.frame.origin.y = 309
         Result.frame.origin.x = 20
-
+        
         
         
     }
     
     @IBAction func Engineering(_ sender: Any) {
         boxXY.isHidden = false
-        boxSimpe.frame.origin.y = 20
+        boxSin.isHidden = false
+        boxSimpe.frame.origin.y = 25
         boxSimpe.frame.origin.x = 20
-        Result.frame.origin.y = 180
+        Result.frame.origin.y = 309
         Result.frame.origin.x = 20
-        boxXY.frame.origin.y = 150
+        boxXY.frame.origin.y = 259
         boxXY.frame.origin.x = 20
         
-
+        
     }
     
     
-
+    
     //end
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
-
-
+    
+    
 }
 
