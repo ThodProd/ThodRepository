@@ -723,7 +723,7 @@
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="Multi:" target="XfG-lQ-9wD" id="7Vn-1g-GsV"/>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="OUy-pk-Ue0"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3r-9t-Mck">
@@ -734,7 +734,7 @@
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="Minus:" target="XfG-lQ-9wD" id="JZS-ST-OfC"/>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="x6U-ed-Vbc"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-Fd-59H">
@@ -778,7 +778,7 @@
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="Division:" target="XfG-lQ-9wD" id="pem-wG-Q6J"/>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="f5x-lR-XYp"/>
                                             </connections>
                                         </button>
                                         <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="VLz-vy-71B">
@@ -796,7 +796,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="fKn-oC-o8g"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="R2c-ZD-SPw"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgw-S8-zGH">
@@ -807,7 +807,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="NTq-gm-00t"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="gVq-Dm-JHB"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8c-MH-3cW">
@@ -818,7 +818,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="f8i-dr-1gs"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="RPj-LE-PQv"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvQ-Ef-0EO">
@@ -829,7 +829,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="Pvu-ne-Cx5"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="q05-Zg-Tzf"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3l-iM-o94">
@@ -840,7 +840,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="gvr-wW-2Pf"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="TxM-9U-SxI"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wk-kH-c4x">
@@ -851,7 +851,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="wnk-j7-OAN"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="KeP-te-dF0"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrX-9f-tGN">
@@ -862,7 +862,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="tSg-5l-d1K"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="LCf-tF-hsB"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQV-dR-7ya">
@@ -873,7 +873,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="52A-1B-Pyg"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="X0U-iq-amx"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G4f-vW-wyb">
@@ -895,7 +895,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="CAi-Kx-BsC"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="Q44-3a-qIK"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fd-XL-nSF">
@@ -906,7 +906,7 @@
                                                             <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                                         </buttonCell>
                                                         <connections>
-                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="L1X-PC-6hh"/>
+                                                            <action selector="allSimbols:" target="XfG-lQ-9wD" id="iIj-16-NFY"/>
                                                         </connections>
                                                     </button>
                                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pP-Wn-mxa">
@@ -942,7 +942,7 @@
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="Plus:" target="XfG-lQ-9wD" id="GD9-g5-uFU"/>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="zd9-sj-eqL"/>
                                             </connections>
                                         </button>
                                     </subviews>
