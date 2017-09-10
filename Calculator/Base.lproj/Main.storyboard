@@ -686,28 +686,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="333" height="389"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYf-By-f0E">
-                                <rect key="frame" x="79" y="361" width="81" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Простой" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55M-c1-gm0">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="9" name=".SFNSText"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="Simple:" target="XfG-lQ-9wD" id="zbI-cY-diR"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2g-IX-QCB">
-                                <rect key="frame" x="152" y="361" width="81" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Инженерный" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qa3-mu-mgW">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="miniSystem"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="Engineering:" target="XfG-lQ-9wD" id="Pg4-4n-saT"/>
-                                </connections>
-                            </button>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="WQp-pz-WqB">
                                 <rect key="frame" x="20" y="70" width="186" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1034,6 +1012,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="2T9-ab-n5o"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpa-WX-v8A">
                                             <rect key="frame" x="60" y="-3" width="44" height="45"/>
@@ -1042,6 +1023,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="JCd-rO-iXY"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOS-hn-Dt0">
                                             <rect key="frame" x="-2" y="142" width="58" height="45"/>
@@ -1050,6 +1034,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="Q8m-9y-1OH"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXu-AJ-Ojh">
                                             <rect key="frame" x="-2" y="95" width="58" height="45"/>
@@ -1058,6 +1045,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="Uta-bF-KbW"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qcI-wa-iv5">
                                             <rect key="frame" x="53" y="95" width="58" height="45"/>
@@ -1066,6 +1056,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="8DM-xF-MWk"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPh-0C-NlI">
                                             <rect key="frame" x="5" y="47" width="44" height="45"/>
@@ -1074,6 +1067,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="NER-ln-Wnh"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tjb-K9-ykP">
                                             <rect key="frame" x="60" y="47" width="44" height="45"/>
@@ -1082,6 +1078,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="pbL-cU-Zuy"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wRR-F3-sq9">
                                             <rect key="frame" x="5" y="-3" width="44" height="45"/>
@@ -1090,10 +1089,35 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="25" name="AppleSDGothicNeo-Regular"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="sign:" target="XfG-lQ-9wD" id="XBR-LT-QVh"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>
                             </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYf-By-f0E">
+                                <rect key="frame" x="80" y="361" width="86" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Простой" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="55M-c1-gm0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="9" name=".SFNSText"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Simple:" target="XfG-lQ-9wD" id="zbI-cY-diR"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2g-IX-QCB">
+                                <rect key="frame" x="166" y="361" width="86" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Инженерный" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qa3-mu-mgW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="miniSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Engineering:" target="XfG-lQ-9wD" id="Pg4-4n-saT"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
