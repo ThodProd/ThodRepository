@@ -22,6 +22,11 @@ var swichMinesSign: String = ""
 var keyButton = ""
 var keyTup = ""
 var variable: Double = 0
+var sinCosLn = ""
+var sinVariable: Double = 0
+var pi: Double = M_PI/180
+var e: Double = M_E
+
 
 
 class ViewController: NSViewController {
@@ -33,6 +38,7 @@ class ViewController: NSViewController {
     
     
     @IBAction func sign(_ sender: Any) {
+        
         Result.stringValue += (sender as! NSButton).title
         keyTup = (sender as! NSButton).title
         keyButton = keyTup
@@ -47,15 +53,39 @@ class ViewController: NSViewController {
             Result.stringValue = ""
         }
         Result.stringValue += (sender as! NSButton).title
-        
+        variable += Double((sender as! NSButton).title)!
     }
+    
+    @IBAction func piM(_ sender: Any) {
+        Result.stringValue = "\(M_PI)"
+    }
+    
     
     //end
     
     
     //Symbol
     
-    
+    @IBAction func sinCos(_ sender: Any) {
+        if Result.stringValue == ""{}
+        else
+        {
+            sinVariable = NSString(string: Result.stringValue).doubleValue
+            sinCosLn = (sender as! NSButton).title
+            
+        }
+        switch sinCosLn
+        {
+        case "sin" : answer = sin(sinVariable*pi)
+        case "cos" : answer = cos(sinVariable*pi)
+        case "tan" : answer = tan(sinVariable*pi)
+        case "cot" : answer = cos(sinVariable*pi)/sin(sinVariable*pi)
+        case "lg" : answer = log10(sinVariable)
+        case "ln" : answer = log10(sinVariable)/log10(e)
+        default: break
+        }
+        Result.stringValue = "\(answer)"
+    }
     
     
     
@@ -111,6 +141,7 @@ class ViewController: NSViewController {
             Result.stringValue += "("
             
         }
+            
         else if Result.stringValue != ""
         {
             Result.stringValue += ")"
@@ -158,8 +189,7 @@ class ViewController: NSViewController {
         if swichMulti == false
         {
             swichMulti = true
-            Result.stringValue += "ˆ"
-            keyTup = "ˆ"
+            Result.stringValue += "ˆ("
         }
     }
     
@@ -173,10 +203,6 @@ class ViewController: NSViewController {
         }
         
     }
-    
-    
-    
-    
     
     
     
@@ -217,7 +243,7 @@ class ViewController: NSViewController {
         swichMulti = false
         keyTup = ""
         keyButton = ""
-        
+        variable = 0
     }
     
     
@@ -255,43 +281,48 @@ class ViewController: NSViewController {
     
     @IBAction func Finish(_ sender: Any) {
         if Result.stringValue != ""{
-            if keyTup == "" {}
-            else
+            if keyTup == ""
             {
-            let swichResultArray = Result.stringValue.components(separatedBy: keyTup)
-            if ((swichResultArray[0] != "") && (swichResultArray[1] == "0")) || ((keyTup != "" && swichResultArray[1] == ""))
-            {
-                Result.stringValue.remove(at: Result.stringValue.index(before: Result.stringValue.endIndex))
+                let squaredNArray = Result.stringValue.components(separatedBy: "ˆ(")
+                First = NSString(string: squaredNArray[0]).doubleValue
+                Second = NSString(string: squaredNArray[1]).doubleValue
+                answer = pow(First, Second)
+                Result.stringValue = "\(answer)"
             }
             else
             {
-                First = NSString(string: swichResultArray[0]).doubleValue
-                Second = NSString(string: swichResultArray[1]).doubleValue
-                switch keyButton {
-                case "÷" :  answer = First / Second
-                case "*" : answer = First * Second
-                case "+" : answer = First + Second
-                case "-" : answer = First - Second
-                case "ˆ" : answer = pow(First, Second)
-                case "sin" : answer = sin(variable)
-                default: break
-                }
-                let zeroRes = "\(answer)"
-                var zeroResArray = zeroRes.components(separatedBy: ".")
-                if zeroResArray[1] == "0" {
-                    Result.stringValue = "\(zeroResArray[0])"
-                    keyTup = ""
-                    dotSwich = false
+                let swichResultArray = Result.stringValue.components(separatedBy: keyTup)
+                if ((swichResultArray[0] != "") && (swichResultArray[1] == "0")) || ((keyTup != "" && swichResultArray[1] == ""))
+                {
+                    Result.stringValue.remove(at: Result.stringValue.index(before: Result.stringValue.endIndex))
                 }
                 else
                 {
-                    Result.stringValue = "\(answer)"
-                    keyTup = ""
-                    dotSwich = false
+                    First = NSString(string: swichResultArray[0]).doubleValue
+                    Second = NSString(string: swichResultArray[1]).doubleValue
+                    switch keyButton {
+                    case "÷" :  answer = First / Second
+                    case "*" : answer = First * Second
+                    case "+" : answer = First + Second
+                    case "-" : answer = First - Second
+                    default: break
+                    }
+                    let zeroRes = "\(answer)"
+                    var zeroResArray = zeroRes.components(separatedBy: ".")
+                    if zeroResArray[1] == "0" {
+                        Result.stringValue = "\(zeroResArray[0])"
+                        keyTup = ""
+                        dotSwich = false
+                    }
+                    else
+                    {
+                        Result.stringValue = "\(answer)"
+                        keyTup = ""
+                        dotSwich = false
+                    }
                 }
-            }
-            
-        }    }
+                
+            }    }
     }
     
     
